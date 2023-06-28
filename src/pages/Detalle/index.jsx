@@ -9,9 +9,7 @@ export default function Detalle() {
 
     const getOdontologo = async () => {
         try {
-            const response = await fetch(
-                `https://jsonplaceholder.typicode.com/users/${id}`
-            )
+            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
             if (response.status !== 200) throw new Error('Not found')
             const data = await response.json()
             setOdontologo(data)
@@ -34,9 +32,7 @@ export default function Detalle() {
                     <p className={styles.text}>Sitio web: {odontologo.website}</p>
                 </article>
             ) : (
-                <h2 className={styles.title}>
-                    Odontologo con id {id} no encontrado
-                </h2>
+                <h2 className={styles.title}>Odontologo con id {id} no encontrado</h2>
             )}
         </>
     )

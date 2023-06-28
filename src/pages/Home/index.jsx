@@ -4,8 +4,7 @@ import { OdontologosContext } from '../../contexts/OdontologosContext'
 import { Card } from '../../components'
 
 export default function Home() {
-    const { odontologos, getOdonotologos, handleFavouriteClick } =
-        useContext(OdontologosContext)
+    const { odontologos, getOdonotologos, handleFavouriteClick } = useContext(OdontologosContext)
 
     const handleClick = (odontologo) => {
         handleFavouriteClick(odontologo)

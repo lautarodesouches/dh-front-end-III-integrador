@@ -7,9 +7,7 @@ function OdontologosProvider({ children }) {
     const [favoritos, setFavoritos] = useState([])
 
     const getOdonotologos = async () => {
-        const response = await fetch(
-            'https://jsonplaceholder.typicode.com/users'
-        )
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
         const data = await response.json()
         setOdontologos(data)
     }
@@ -23,9 +21,7 @@ function OdontologosProvider({ children }) {
     const isFavourite = (id) => favoritos.some((favorito) => favorito.id === id)
 
     const removeFavourite = (odontologo) => {
-        const nuevos = favoritos.filter(
-            (favorito) => favorito.id !== odontologo.id
-        )
+        const nuevos = favoritos.filter((favorito) => favorito.id !== odontologo.id)
         updateFavourites(nuevos)
     }
 
@@ -56,7 +52,7 @@ function OdontologosProvider({ children }) {
                 getOdonotologos,
                 getFavoritos,
                 handleFavouriteClick,
-                removeFavourite
+                removeFavourite,
             }}
         >
             {children}
