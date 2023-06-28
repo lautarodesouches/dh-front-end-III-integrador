@@ -30,18 +30,6 @@
     background-color: var(--background);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --primary-bg: #1F487E;
-        --primary-bg-hover: #e1ebd9;
-        --primary-text: #e1e1e1;
-        --secondary-bg: #1D3461;
-        --secondary-text: #e1e1e1;
-        --background: #A29C9B;
-        --error: #ffffff;
-    }
-}
-
 @keyframes fadeIn {
     0% {
         opacity: 0;

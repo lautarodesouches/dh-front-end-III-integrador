@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from 'react'
 export const OdontologosContext = createContext()
 
 function OdontologosProvider({ children }) {
+    const [isDarkTheme, setIsDarkTheme] = useState(false)
+
     const [odontologos, setOdontologos] = useState([])
     const [favoritos, setFavoritos] = useState([])
 
@@ -40,6 +42,29 @@ function OdontologosProvider({ children }) {
         else addFavourite(odontologo)
     }
 
+    const changeTheme = () => {
+        setIsDarkTheme((prev) => !prev)
+
+        const colorsLight = ['#F3F7F0', '#e1ebd9', '#000', '#98C1D9', '#000', '#A29C9B', '#ce2020']
+        const colorsDark = ['#1F487E', '#e1ebd9', '#e1e1e1', '#1D3461', '#e1e1e1', '#A29C9B', '#ffffff']
+
+        let selectedColors = []
+
+        if (isDarkTheme) {
+            selectedColors = colorsDark
+        } else {
+            selectedColors = colorsLight
+        }
+
+        document.documentElement.style.setProperty('--primary-bg', selectedColors[0])
+        document.documentElement.style.setProperty('--primary-bg-hover', selectedColors[1])
+        document.documentElement.style.setProperty('--primary-text', selectedColors[2])
+        document.documentElement.style.setProperty('--secondary-bg', selectedColors[3])
+        document.documentElement.style.setProperty('--secondary-text', selectedColors[4])
+        document.documentElement.style.setProperty('--background', selectedColors[5])
+        document.documentElement.style.setProperty('--error', selectedColors[6])
+    }
+
     useEffect(() => {
         getFavoritos()
     }, [])
@@ -53,6 +78,8 @@ function OdontologosProvider({ children }) {
                 getFavoritos,
                 handleFavouriteClick,
                 removeFavourite,
+                changeTheme,
+                isDarkTheme
             }}
         >
             {children}
