@@ -22,17 +22,26 @@ function OdontologosProvider({ children }) {
 
     const isFavourite = (id) => favoritos.some((favorito) => favorito.id === id)
 
+    const removeFavourite = (odontologo) => {
+        const nuevos = favoritos.filter(
+            (favorito) => favorito.id !== odontologo.id
+        )
+        updateFavourites(nuevos)
+    }
+
+    const addFavourite = (odontologo) => {
+        const nuevos = [...favoritos, odontologo]
+        updateFavourites(nuevos)
+    }
+
+    const updateFavourites = (favourites) => {
+        localStorage.setItem('favoritos', JSON.stringify(favourites))
+        setFavoritos(favourites)
+    }
+
     const handleFavouriteClick = (odontologo) => {
-        let nuevosFavoritos = []
-
-        if (isFavourite(odontologo.id))
-            nuevosFavoritos = favoritos.filter(
-                (favorito) => favorito.id !== odontologo.id
-            )
-        else nuevosFavoritos = [...favoritos, odontologo]
-
-        localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos))
-        setFavoritos(nuevosFavoritos)
+        if (isFavourite(odontologo.id)) removeFavourite(odontologo)
+        else addFavourite(odontologo)
     }
 
     useEffect(() => {
@@ -47,6 +56,7 @@ function OdontologosProvider({ children }) {
                 getOdonotologos,
                 getFavoritos,
                 handleFavouriteClick,
+                removeFavourite
             }}
         >
             {children}

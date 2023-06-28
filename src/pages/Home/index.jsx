@@ -13,7 +13,7 @@ export default function Home() {
 
     useEffect(() => {
         getOdonotologos()
-    }, [getOdonotologos])
+    }, [])
 
     return (
         <>
