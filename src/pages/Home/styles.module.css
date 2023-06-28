@@ -1,3 +1,8 @@
 .container {
-    background: #e1e1e1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
 }

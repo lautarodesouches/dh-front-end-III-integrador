@@ -1,0 +1,53 @@
+.card {
+    background: var(--secondary-bg);
+    color: var(--secondary-text);
+    border-radius: 5px;
+    padding: 2rem .5rem 1rem .5rem;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: calc(100% / 6);
+}
+
+.span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.button {
+    font-size: 1rem;
+    padding: .3rem 0;
+    width: 100%;
+    margin: auto;
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+.button:hover {
+    background: var(--primary-bg-hover);
+}

@@ -9,10 +9,17 @@
 
 :root {
     --primary-bg: #e1e1e1;
+    --primary-bg-hover: #b9b9b9;
     --primary-text: #000;
+    --secondary-bg: #9c9c9c;
+    --secondary-text: #000;
 }
 
 .main{
     width: 100vw;
-    height: 88vh;
+    min-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
