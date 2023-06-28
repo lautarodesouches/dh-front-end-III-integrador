@@ -1,14 +1,19 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import styles from './styles.module.css'
 import { OdontologosContext } from '../../contexts/OdontologosContext'
 import { Card } from '../../components'
 
 export default function Home() {
-    const odontologos = useContext(OdontologosContext)
+    const { odontologos, getOdonotologos, handleFavouriteClick } =
+        useContext(OdontologosContext)
 
-    const handleClick = (idOdontologo) => {
-        console.log(idOdontologo)
+    const handleClick = (odontologo) => {
+        handleFavouriteClick(odontologo)
     }
+
+    useEffect(() => {
+        getOdonotologos()
+    }, [getOdonotologos])
 
     return (
         <>
@@ -20,7 +25,7 @@ export default function Home() {
                         id={odontologo.id}
                         name={odontologo.name}
                         username={odontologo.username}
-                        onclick={() => handleClick(odontologo.id)}
+                        onclick={() => handleClick(odontologo)}
                     />
                 ))}
             </div>
