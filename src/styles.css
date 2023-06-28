@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+    --primary-bg: #e1e1e1;
+    --primary-text: #000;
+}
+
+.main{
+    width: 100vw;
+    height: 88vh;
+}
