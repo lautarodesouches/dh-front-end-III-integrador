@@ -1,6 +1,6 @@
 .card {
-    background: var(--secondary-bg);
-    color: var(--secondary-text);
+    background: var(--primary-bg);
+    color: var(--primary-text);
     border-radius: 5px;
     padding: 3rem .5rem 1rem .5rem;
     position: relative;
@@ -40,8 +40,8 @@
     padding: .3rem 0;
     width: 100%;
     margin: auto;
-    background: var(--primary-bg);
-    color: var(--primary-text);
+    background: var(--secondary-bg);
+    color: var(--secondary-text);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -50,12 +50,12 @@
 }
 
 .button:hover {
-    background: var(--primary-bg-hover);
+    background: var(--secondary-bg-hover);
 }
 
 .link {
     text-decoration: none;
-    color: var(--primary-text);
+    color: var(--secondary-text);
 }
 
 .icon {
@@ -63,4 +63,5 @@
     height: 100%;
     padding: 0;
     margin: 0;
+    fill: var(--secondary-text);
 }

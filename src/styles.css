@@ -5,17 +5,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
+    transition: background-color 1s;
 }
 
 :root {
-    --primary-bg: #e1e1e1;
-    --primary-bg-hover: #b9b9b9;
+    --primary-bg: #F3F7F0;
+    --primary-bg-hover: #e1ebd9;
     --primary-text: #000;
-    --secondary-bg: #9c9c9c;
+    --secondary-bg: #98C1D9;
     --secondary-text: #000;
+    --background: #A29C9B;
+    --error: #ce2020;
 }
 
-.main{
+.main {
+    animation: fadeIn 1s;
     padding: 1rem;
     width: 100vw;
     min-height: 88vh;
@@ -23,4 +27,27 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: #1F487E;
+        --primary-bg-hover: #e1ebd9;
+        --primary-text: #e1e1e1;
+        --secondary-bg: #1D3461;
+        --secondary-text: #e1e1e1;
+        --background: #A29C9B;
+        --error: #ffffff;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

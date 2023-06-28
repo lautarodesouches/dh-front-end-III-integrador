@@ -23,6 +23,10 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
+            <div className={styles.switch}>
+                <input type="checkbox" />
+                <span className={styles.slider}></span>
+            </div>
         </header>
     )
 }

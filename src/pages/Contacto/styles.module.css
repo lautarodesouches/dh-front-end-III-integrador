@@ -13,6 +13,7 @@
 
 .title{
     font-size: 1.6rem;
+    color: var(--primary-text);
 }
 
 .div {
@@ -25,11 +26,13 @@
 }
 
 .label {
+    color: var(--primary-text);
     width: 100%;
     font-size: 1rem;
 }
 
 .input {
+    background: var(--background);
     border-radius: 5px;
     width: 100%;
     font-size: 1rem;
@@ -38,6 +41,8 @@
 }
 
 .button {
+    background: var(--secondary-bg);
+    color: var(--secondary-text);
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -47,5 +52,5 @@
 }
 
 .error{
-    color: #a80404;
+    color: var(--error);
 }
